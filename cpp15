@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class Student
+{
+   private:
+      int regno;
+      string name;
+      float marks;
+   public:
+      Student()
+      {}
+      Student(int rno, string n, float m)
+      {
+         regno=rno;
+         name=n;
+         marks=m;
+      }
+      void display()
+      {
+         cout<<regno<<""<<name<<""<<marks<<endl;
+      }
+      Student(Student &SS)
+      {
+         regno=SS.regno;
+         name=SS.name;
+         marks=SS.marks;
+      }
+};
+int main()
+{
+   Student S(1010,"Raju",96);
+   S.display();
+   Student S1(S);
+   S1.display();
+   Student S2=S;
+   S2.display();
+   return 0;
+}
