@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class NUM
+{
+   private:
+      int a,b,c;
+   public:
+      void get()
+      {
+         cout<<"enter a,b,c:";
+         cin>>a>>b>>c;
+      }
+      void display()
+      {
+         cout<<a<<" "<<b<<" "<<c;
+      }
+      friend NUM operator *(NUM,int);
+};
+NUM operator *(NUM nn,int z)
+{
+   NUM obj;
+   obj.a=nn.a*z;
+   obj.b=nn.b*z;
+   obj.c=nn.c*z;
+   return obj;
+}
+int main()
+{
+   NUM N1,N2;
+   N1.get();
+   int x;
+   cout<<"enter int:";
+   cin>>x;
+   N2=N1*x;
+   N2.display();
+}
