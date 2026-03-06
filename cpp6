@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,z;
+    cin>>a>>b;
+    if(a>b)
+    {
+        z=a-b;
+    }
+    else
+    {
+        z=b-a;
+    }
+    cout<<z;
+}
