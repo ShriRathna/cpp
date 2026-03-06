@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int x,y,z;
+    cin>>x;
+    cin>>y;
+    cin>>z;
+    if((x+y+z)==180)
+    {
+        if((x==90) || (y==90) || (z==90))
+        {
+            cout<<"Prize 2";
+        }
+        else if((x==y)&&(y==z))
+        {
+            cout<<"Prize 3";
+        }
+        else if((x!=y)&&(y!=z)&&(x!=z))
+        {
+            cout<<"Prize 1";
+        }
+    }
+    else
+    {
+        cout<<"No Prize";
+    }
+}
+
