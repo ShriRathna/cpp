@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class B;
+class A
+{
+   private:
+      int a;
+   public:
+      void get()
+      {
+         cout<<"enter a:";
+         cin>>a;
+      }
+      void display()
+      {
+         cout<<"a="<<a;
+      }
+      friend class B;
+};
+class B
+{
+   private:
+      int b;
+   public:
+      void get()
+      {
+         cout<<"enter b:";
+         cin>>b;
+      }
+      void display(A o1)
+      {
+         o1.display();
+         cout<<"b="<<b;
+      }
+      void add(A o1)
+      {
+         o1.get();
+         int c=o1.a+b;
+         cout<<"add "<<c<<endl;
+      }
+      void multi(A o2)
+      {
+         o2.get();
+         int m=o2.a*b;
+         cout<<"product "<<m;
+      }
+};
+int main()
+{
+   A aa;
+   B bb;
+   bb.get();
+   bb.add(aa);
+   bb.multi(aa);
+}
