@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class digit
+{
+   private:
+      int no,*di,l;
+   public:
+      digit()
+      {
+         l=0;}
+      digit(int a)
+      {
+         l=0;
+         no=a;
+      }
+      void get()
+      {
+         cout<<"enter the number:";
+         cin>>no;}
+      void len()
+      {
+         int n=no;
+         while (no!=0)
+         {
+            no=no/10;
+            l++;
+         }
+         di=new int[l];
+         for (int i=0;i<l;i++)
+         {
+            di[i]=n%10;
+            n=n/10;
+         }
+      }
+      void display()
+      {
+         for(int i=0;i<l;i++)
+         {
+            cout<<di[i]<<endl;
+         }
+      }
+};
+int main()
+{
+   digit D1;
+   D1.get();
+   D1.len();
+   D1.display();
+   digit D2(8346);
+   D2.len();
+   D2.display();
+}
