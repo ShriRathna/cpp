@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class student
+{
+   private:
+      string name;
+      int age,height;
+      float w,mrk;
+   public:
+         void get()
+         {
+            cout<<"Enter name:";
+            cin>>name;
+            cout<<"enter age:";
+            cin>>age;
+            cout<<"enter height:";
+            cin>>height;
+            cout<<"enter weight:";
+            cin>>w;
+            cout<<"enter mark:";
+            cin>>mrk;
+         }
+         void display()
+         {
+            cout<<"name:"<<name<<endl;
+            cout<<"age:"<<age<<endl;
+            cout<<"height & weight:"<<height<<"&"<<w<<endl;
+            cout<<"marks:"<<mrk<<endl;
+         }
+        student()
+        {
+           name=" ";
+           age=0;
+           height=0;
+           w=0;
+           mrk=0;
+        }
+        student(string s,int a,int h,float w1,float mrk1)
+        {
+           name=s;
+           age=a;
+           height=h;
+           w=w1;
+           mrk=mrk1;
+        }
+        ~student()
+        {
+           cout<<"task completed ";
+        }
+
+};
+int main()
+{
+   student S;
+   S.display();
+   student S1("Ramu",23,168,60.5,95.2);
+   S1.display();
+   student S2;
+   S2.get();
+   S2.display();
+   return 0;
+}
