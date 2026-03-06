@@ -1,0 +1,34 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+template<class TT>
+
+   void roots(TT a,TT b,TT c)
+   {
+      float x1,x2;
+      float f=((b*b)-(4*a*c));
+      if(f==0)
+      {
+         cout<<"real and equal "<<((-1*b)/(2*a))<<endl;
+      }
+      else if(f>0)
+      {
+         cout<<"roots are real and unequal"<<endl;
+         x1=(-b+sqrt(f))/(2*a);
+         x2=(-b-sqrt(f))/(2*a);
+         cout<<"roots="<<x1<<x2;
+      }
+      else
+      {
+         x1=(((-1)*b)/(2*a));
+         x2=((sqrt((-1)*(f)))/(2*a));
+         cout<<x1<<"+i"<<x2<<endl;
+         cout<<x1<<"-i"<<x2<<endl;
+      }
+   }
+int main()
+{
+   roots(1,2,1);
+   roots(2.4,4.8,9.2);
+   roots(1,5,1);
+}
