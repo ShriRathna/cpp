@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Employee
+{
+   private:
+      int eno;
+      string ename;
+      float Basic,da,net;
+   public:
+      void get()
+      {
+         cout<<"enter num, name, Basic, da & net salary:";
+         cin>>eno>>ename>>Basic>>da>>net;
+      }
+      void display()
+      {
+         cout<<eno<<" "<<ename<<" "<<Basic<<" "<<da<<" "<<net<<endl;
+      }
+};
+int main()
+{
+   Employee E1[4];
+   for(int i=0;i<4;i++)
+   {
+      E1[i].get();
+   }
+   for(int i=0;i<4;i++)
+   {
+      E1[i].display();
+   }
+}
