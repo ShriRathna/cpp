@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class Time
+{
+   private:
+      int hrs,min,sec;
+      string s;
+   public:
+      Time()
+      {
+         hrs=0;
+         min=0;
+         sec=0;
+         s=" ";
+      }
+      Time(int h,int m,int se, string a)
+      {
+         hrs=h;
+         min=m;
+         sec=se;
+         s=a;
+      }
+      void display()
+      {
+         if(s=="am")
+            cout<<"time ="<<hrs<<":"<<min<<":"<<sec<<endl;
+         else
+            hrs=hrs+12;
+            cout<<"time ="<<hrs<<":"<<min<<":"<<sec<<endl;
+      }
+      ~Time()
+      {
+         cout<<"time displayed";
+      }
+};
+int main()
+{
+   Time t(5,30,52,"pm");
+   t.display();
+   return 0;
+}
