@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class string1
+{
+   private:
+      char name[100];
+   public:
+      void get()
+      {
+         cout<<"enter name:";
+         cin>>name;
+      }
+      void display()
+      {
+         cout<<name;
+      }
+      string1 operator +(string1 oo)
+      {
+         string1 res;
+         strcpy(res.name,name);
+         strcat(res.name,oo.name);
+         return res;
+      }
+};
+int main()
+{
+   string1 s1,s2,s3;
+   s1.get();
+   s2.get();
+   s3=s1+s2;
+   s3.display();
+}
