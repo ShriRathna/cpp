@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+class gen
+{
+   protected:
+      float v,il,ra;
+   public:
+      void get()
+      {
+         cout<<"Enter v,il,ra";
+         cin>>v>>il>>ra;
+      }
+};
+class shunt:gen
+{
+   float rsh;
+   public:
+      void get1()
+      {
+         get();
+         cout<<"enter rsh:";
+         cin>>rsh;
+      }
+      void emfsh()
+      {
+         float ish=v/rsh;
+         float e=v+((il+ish)*ra);
+         cout<<e;
+      }
+};
+class series:gen
+{
+   float rse;
+   public:
+      void get2()
+      {
+         get();
+         cout<<"enter rse";
+         cin>>rse;
+      }
+      void emfse()
+      {
+         float e=v+(il*(ra+rse));
+         cout<<e;
+      }
+};
+class lshunt:gen
+{
+   float rsh,rse;
+   public:
+      void get3()
+      {
+         get();
+         cout<<"enter rsh,rse:";
+         cin>>rsh>>rse;
+      }
+      void emfls()
+      {
+         float ish=v/rsh;
+         float e=v+((il+ish)*(ra+rse));
+         cout<<e;
+      }
+};
+class sshunt:gen
+{
+   float rse,ia;
+   public:
+      void get4()
+      {
+         get();
+         cout<<"enter rse,ia:";
+         cin>>rse>>ia;
+      }
+      void emfss()
+      {
+         float e=v+(ia*(ra+rse));
+         cout<<e;
+      }
+};
+int main()
+{
+   shunt x;
+   x.get1();
+   x.emfsh();
+   series y;
+   y.get2();
+   y.emfse();
+   lshunt z;
+   z.get3();
+   z.emfls();
+   sshunt a;
+   a.get4();
+   a.emfss();
+}
