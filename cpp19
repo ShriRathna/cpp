@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+class Time
+{
+   private:
+      int hr,min,sec;
+   public:
+      void get()
+      {
+         cout<<"enter hr,min,sec:";
+         cin>>hr>>min>>sec;
+      }
+      void display()
+      {
+         cout<<hr<<":"<<min<<":"<<sec<<endl;
+      }
+      void operator ++()
+      {
+         ++hr;
+         ++min;
+         ++sec;
+      }
+      void operator ++(int)
+      {
+         hr++;
+         min++;
+         sec++;
+      }
+      void operator --()
+      {
+         --hr;
+         --min;
+         --sec;
+      }
+      void operator --(int)
+      {
+         hr--;
+         min--;
+         sec--;
+      }
+};
+int main()
+{
+   Time T;
+   T.get();
+   ++T;
+   T.display();
+   T++;
+   T.display();
+   --T;
+   T.display();
+   T--;
+   T.display();
+}
