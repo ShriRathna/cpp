@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,points;
+    char a;
+    cin>>n;
+    cin>>a;
+    if (n>0 && n<10)
+    {
+        if (a=='y')
+        {
+            points=n+5;
+        }
+        else
+        {
+            points=n;
+        }
+        cout<<points;
+    }
+    else
+    {
+        cout<<"Invalid Input";
+    }
+}
